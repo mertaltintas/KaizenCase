@@ -1,4 +1,5 @@
-﻿Random rnd = new Random(Guid.NewGuid().GetHashCode());
+﻿//Kodların random oluşturularn kısımları için System.Random sınıfı kullanılmıştır.
+Random rnd = new Random(Guid.NewGuid().GetHashCode());
 string codeChars = "ACDEFGHKLMNPRTXYZ234579";
 
 GeneratesCodes();
@@ -28,12 +29,13 @@ string GenerateCode()
         var randomIndex = rnd.Next(0, codeChars.Length);
         char randomChar = codeChars[randomIndex];
 
-        //belli bir denkleme göre indexleri toplar
+        //belirlediğim bir denkleme göre indexleri toplar
         sum += (randomIndex + 1) * (i + 1);
         randomCode += randomChar;
     }
 
-    //6 karakterli random koddan elde edlilen toplamdan 2 karakter için anahtar oluşturur
+    //6 karakterli random koddan elde edlilen index toplamından,
+    //2 karakter belirlediğim denkleme göre anahtar oluşturur
     int firstKeyIndex = (sum + 101) % codeChars.Length;
     int secondKeyIndex = ((sum / 2)) % codeChars.Length;
 
@@ -54,11 +56,12 @@ bool CheckCode(string code)
     {
         int charIndex = codeChars.IndexOf(randomCode[i]);
 
-        //belli bir denkleme göre indexleri toplar
+        //kod oluştururkenbelirlediğim bir denkleme göre indexleri toplar
         sum += (charIndex + 1) * (i + 1);
     }
 
-    //2 karakter için doğrulama
+    //6 karakterli random koddan elde edlilen index toplamından,
+    //2 karakter belirlediğim denkleme göre anahtar oluşturur
     int firstKeyIndex = (sum + 101) % codeChars.Length;
     int secondKeyIndex = ((sum / 2)) % codeChars.Length;
 
