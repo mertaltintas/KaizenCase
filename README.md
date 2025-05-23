@@ -21,8 +21,8 @@ Denklem algoritması açıklaması :
 6 haneli random kodun her bir karakterinin sırasıyla charSet'deki indexlerinin karşılığının bir fazlası ile koddaki indexinin 1 fazlası birbiriyle çarpılır.
 Her karakter için elde edilen bi çarpım birbiriyle toplanır.   sum += (randomIndex + 1) * (i + 1);
 
-4. karakter X =  toplamın 101 fazlasının charsete göre modu    (sum + 101) % codeChars.Length
-8. karakter Y = toplamın yarısının charsete göre modu  ((sum / 2)) % codeChars.Length
+ 4. karakter X =  toplamın 101 fazlasının charsete göre modu    (sum + 101) % codeChars.Length
+ 8. karakter Y = toplamın yarısının charsete göre modu  ((sum / 2)) % codeChars.Length
 
 CheckCode kısmında aynı işlemler ile 4. ve 8. karakterin sağlaması yapılır ve kod valid kabul edilir.
 
