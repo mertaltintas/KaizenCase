@@ -1,6 +1,6 @@
 ﻿namespace KaizenCase2.Models
 {
-    public class Item
+    public class ResponseItem
     {
         public string? Locale { get; set; }
         public required string Description { get; set; }
